@@ -1,0 +1,248 @@
+.dotted-line{
+  border-bottom:1px dotted #CCC;
+  margin: 20px auto;
+}
+
+/* @group img */
+.img-size-150{
+  border:0;  
+  margin:0;  
+  padding:0;  
+  max-width:150px;  
+  max-height:150px;  
+  width:expression(this.width>150?"150px":this.width);  
+  height:expression(this.height>150?"  150px":this.height);  
+}
+
+.img-circle-css3{
+  border-radius:50%; /* 使用CSS3 */
+}
+
+/* @group equal-height-col 
+ * Reference:CSS Mastery Advanced Web Standards Solutions Second Edition;
+ */
+/* 
+ * 等高文本列
+ */
+.equal-height-col-group{
+  position: relative;
+  padding: 0 20px;
+  overflow: hidden;
+}
+.equal-height-col-box{
+  text-align: left;
+  width: 250px;
+  margin-left: 20px;
+  display: inline-block;
+  padding: 20px;
+  vertical-align: top;
+  padding-bottom: 300px;
+  margin-bottom: -300px; 
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  background-color: #E7E7E7;
+}
+.equal-height-col-box:first-child{
+  margin-left: 0;
+}
+
+.equal-height-col-bottom {
+  position: absolute;
+  bottom: 0;
+  height: 20px;
+  width: 290px;
+  border-bottom: 1px solid #ddd;
+  margin-left: -20px; 
+}
+/* 
+ * 使用CSS3创建等高文本列
+ */
+.equal-height-col-css3 {
+  text-align: left;
+  -moz-column-count: 3;
+  -moz-column-width: 14em;
+  -moz-column-gap: 2em;
+  -moz-column-rule: 1px solid #ccc;
+  -webkit-column-count: 3;
+  -webkit-column-width: 14em;
+  -webkit-column-gap: 2em;
+  -webkit-column-rule: 1px solid #ccc;
+}
+
+/* 
+ *@group Thumbnail
+ */
+.thumbnail-box{
+  text-align: left;
+  width: 250px;
+  padding: 4px;
+  border: 1px solid #ccc;
+  margin: 0 20px;
+  display: block;
+  border-radius:4px;
+  -webkit-transition:border .2s ease-in-out;
+  transition:border: .2s ease-in-out;
+}
+.thumbnail-box:hover{
+  cursor:pointer;
+  text-decoration: none;
+  border-color:#337ab7
+}
+.thumbnail-box img{
+  height: 200px;
+  width: 100%;
+  display: block;
+}
+.thumbnail-box .thumbnail-caption{
+  padding:9px;
+}
+/* @group Media */
+/* 使用display:table-cell实现 */
+.media-box, .media-body{
+  overflow: hidden; 
+  zoom: 1;
+}
+.media-box{
+  margin-top: 0.5em;
+}
+.media-left, .media-body, .media-right{
+  display: table-cell;
+  vertical-align: top;
+}
+.media-left{
+  padding-right: 10px;
+}
+.media-right{
+  padding-left: 10px;
+}
+.media-header{
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1;
+}
+.media-body p{
+  margin: 0;
+}
+/* 使用float实现 */
+.media-box-float{
+  background-color:#F8F8F8;
+  border: solid 1px #ddd;
+  padding: 10px;
+}
+.media-left-float{
+  float: left;
+  width:8%;
+  max-width: 64px;
+  overflow: hidden;
+}
+.media-left-float img{
+  max-width: 64px;
+}
+
+.media-body-float{
+  float: right;
+  width:90%;
+}
+
+.media-body-float p{
+  margin:0;
+}
+/* @group word-bread */
+.text-overflow{
+  width:10em;     
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  -o-text-overflow:ellipsis;
+  overflow:hidden;
+}
+
+/* @group tooltip */
+a.tooltip-box {
+    text-decoration: none;
+    border-bottom: dotted 1px blue;
+    position: relative;
+}
+
+.tooltip-box strong {
+    line-height: 30px;
+}
+
+.tooltip-box > span {
+  width: 300px;
+  padding: 10px 20px;
+  margin-top: 0;
+  margin-left: -120px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 10;
+  position: absolute;
+  font-family: Arial;
+  font-size: 12px;
+  font-style: normal;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px #999;
+  -webkit-transition-property: opacity, margin-top, visibility, margin-left;
+  -webkit-transition-duration: 0.4s, 0.3s, 0.4s, 0.3s;
+  -webkit-transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out;
+  transition-property: opacity, margin-top, visibility, margin-left;
+  transition-duration: 0.4s, 0.3s, 0.4s, 0.3s;
+  transition-timing-function: ease-in-out, ease-in-out, ease-in-out, ease-in-out; 
+}
+
+/*a.tooltip > span:hover,*/
+a.tooltip-box:hover > span {
+    opacity: 1;
+    text-decoration: none;
+    visibility: visible;
+    overflow: visible;
+    margin-top: 50px;
+    display: inline;
+    margin-left: -90px;
+}
+
+.tooltip-box span b {
+    width: 15px;
+    height: 15px;
+    margin-left: 40px;
+    margin-top: -19px;
+    display: block;
+    position: absolute;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    -webkit-box-shadow: inset -1px 1px 0 #fff;
+    -moz-box-shadow: inset 0 1px 0 #fff;
+    -o-box-shadow: inset 0 1px 0 #fff;
+    box-shadow: inset 0 1px 0 #fff;
+    display: none\0/;
+    *display: none;
+}    
+
+.tooltip-box > span {
+  color: #000000; 
+  background: #FBF5E6;
+  background: -webkit-linear-gradient(top, #FBF5E6, #FFFFFF);
+  background: linear-gradient(top, #FBF5E6, #FFFFFF);     
+  border: 1px solid #CFB57C;       
+}    
+    
+.tooltip-box span b {
+  background: #FBF5E6;
+  border-top: 1px solid #CFB57C;
+  border-right: 1px solid #CFB57C;
+}
+
+.tooltip-box-example > span{
+  opacity: 1 !important; 
+  text-decoration: none !important;
+  visibility: visible !important;
+  overflow: visible !important;
+  margin-top: 0 !important;
+  display: inline !important;
+  margin-left: 0 !important; 
+  position:relative;
+  display: block !important;
+  z-index: 0;
+}
